@@ -3,8 +3,8 @@ description: "记录、拆解、复盘：犬夜叉的工程笔记。"
 lang: zh-CN
 timezone: Asia/Shanghai
 
-url: "" # 发布后可填：https://<user>.github.io
-baseurl: "" # Project Pages 才需要，例如："/repo-name"
+url: "https://inuyashayang.github.io"
+baseurl: "/techblog"
 
 author:
   name: "犬夜叉"
