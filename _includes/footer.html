@@ -1,0 +1,15 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">{{ site.title }}</div>
+        <div class="footer-sub">{{ site.description }}</div>
+      </div>
+      <div class="footer-meta">
+        <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+        <span class="dot">·</span>
+        <span>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+      </div>
+    </div>
+  </div>
+</footer>

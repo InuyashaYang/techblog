@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-kicker">代号</div>
+    <h1 class="hero-title">犬夜叉</h1>
+    <p class="hero-desc">{{ site.description }}</p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ "/archive/" | relative_url }}">浏览文章</a>
+      <a class="btn btn-ghost" href="{{ "/about/" | relative_url }}">关于我</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>最新文章</h2>
+    <a class="section-more" href="{{ "/archive/" | relative_url }}">全部文章</a>
+  </div>
+
+  <div class="post-grid">
+    {%- for post in site.posts limit: 6 -%}
+      <article class="post-card">
+        <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+        <div class="post-meta">
+          {%- if post.tags and post.tags.size > 0 -%}
+            <div class="tags">
+              {%- for tag in post.tags limit: 3 -%}
+                <span class="tag">{{ tag }}</span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          <a class="read" href="{{ post.url | relative_url }}">阅读</a>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>

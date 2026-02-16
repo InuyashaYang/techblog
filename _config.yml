@@ -1,0 +1,36 @@
+title: "犬夜叉 · 技术博客"
+description: "记录、拆解、复盘：犬夜叉的工程笔记。"
+lang: zh-CN
+timezone: Asia/Shanghai
+
+url: "" # 发布后可填：https://<user>.github.io
+baseurl: "" # Project Pages 才需要，例如："/repo-name"
+
+author:
+  name: "犬夜叉"
+
+permalink: /p/:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "犬夜叉"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

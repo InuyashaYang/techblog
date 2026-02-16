@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="post-eyebrow">
+      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+      {%- if page.tags and page.tags.size > 0 -%}
+        <span class="dot">·</span>
+        <span class="muted">{{ page.tags | join: " / " }}</span>
+      {%- endif -%}
+    </div>
+    <h1 class="post-h1">{{ page.title }}</h1>
+    {%- if page.description -%}
+      <p class="post-desc">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a class="btn btn-ghost" href="{{ "/archive/" | relative_url }}">返回归档</a>
+  </footer>
+</article>
