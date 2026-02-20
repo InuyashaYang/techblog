@@ -21,11 +21,12 @@ layout: default
   </div>
 
   <div class="topic-group-wrap">
-    <div class="topic-group-row">
-      <span class="topic-group-label">Agent</span>
-      <div class="topic-cards">
-        {%- for section in site.data.sections -%}
-          {%- if section.group == "Agent" -%}
+    {%- assign section_groups = site.data.sections | group_by: "group" -%}
+    {%- for group in section_groups -%}
+      <div class="topic-group-row">
+        <span class="topic-group-label">{{ group.name }}</span>
+        <div class="topic-cards">
+          {%- for section in group.items -%}
             {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
             <a class="topic-card" href="{{ section.url | relative_url }}">
               <div class="topic-title">{{ section.title }}</div>
@@ -34,28 +35,10 @@ layout: default
                 {%- if sec_posts.size > 0 -%}{{ sec_posts.size }} 篇{%- else -%}即将上线{%- endif -%}
               </div>
             </a>
-          {%- endif -%}
-        {%- endfor -%}
+          {%- endfor -%}
+        </div>
       </div>
-    </div>
-
-    <div class="topic-group-row">
-      <span class="topic-group-label">Basics</span>
-      <div class="topic-cards">
-        {%- for section in site.data.sections -%}
-          {%- if section.group == "Basics" -%}
-            {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
-            <a class="topic-card" href="{{ section.url | relative_url }}">
-              <div class="topic-title">{{ section.title }}</div>
-              <p class="topic-desc">{{ section.desc }}</p>
-              <div class="topic-count">
-                {%- if sec_posts.size > 0 -%}{{ sec_posts.size }} 篇{%- else -%}即将上线{%- endif -%}
-              </div>
-            </a>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    </div>
+    {%- endfor -%}
   </div>
 </section>
 
