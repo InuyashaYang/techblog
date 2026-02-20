@@ -2,6 +2,7 @@ title: "犬夜叉 · 技术博客"
 description: "记录、拆解、复盘：犬夜叉的工程笔记。"
 lang: zh-CN
 timezone: Asia/Shanghai
+future: true
 
 url: "https://inuyashayang.github.io"
 baseurl: "/techblog"
