@@ -2,6 +2,7 @@
 title: "Codex 沙盒设置对 VS Code Remote-SSH 连接的影响"
 date: 2026-02-20 12:00:00 +0800
 tags: [Codex, SSH, VSCode, Windows, ACL]
+categories: [codex]
 description: "Codex sandbox 用户被写入 .ssh/config ACL，导致 OpenSSH 拒绝读取配置，Remote-SSH 连接失败。记录根因分析与 ACL 修复过程。"
 ---
 

@@ -13,7 +13,7 @@ layout: default
     {%- endif -%}
   </div>
 
-  {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains page.category" -%}
+  {%- assign cat_posts = site.categories[page.category] -%}
 
   {%- if cat_posts.size > 0 -%}
     <div class="post-grid">

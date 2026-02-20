@@ -11,7 +11,7 @@ permalink: /agent/
   <div class="topic-cards" style="margin-top: 24px;">
     {%- for section in site.data.sections -%}
       {%- if section.group == "Agent" -%}
-        {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
+        {%- assign sec_posts = site.categories[section.slug] -%}
         <a class="topic-card" href="{{ section.url | relative_url }}">
           <div class="topic-title">{{ section.title }}</div>
           <p class="topic-desc">{{ section.desc }}</p>

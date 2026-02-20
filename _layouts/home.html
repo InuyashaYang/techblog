@@ -27,7 +27,7 @@ layout: default
         <span class="topic-group-label">{{ group.name }}</span>
         <div class="topic-cards">
           {%- for section in group.items -%}
-            {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
+            {%- assign sec_posts = site.categories[section.slug] -%}
             <a class="topic-card" href="{{ section.url | relative_url }}">
               <div class="topic-title">{{ section.title }}</div>
               <p class="topic-desc">{{ section.desc }}</p>

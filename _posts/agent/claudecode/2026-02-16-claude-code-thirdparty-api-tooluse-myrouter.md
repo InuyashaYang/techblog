@@ -2,6 +2,7 @@
 title: "Claude Code 接第三方 API ——工具调用出错，使用 MyRouter 跑通"
 date: 2026-02-16 14:00:00 +0800
 tags: [Claude Code, VSCode, Anthropic, OpenAI, Router, SSE, ToolUse, Troubleshooting]
+categories: [claudecode]
 description: "工具调用空参数与 JSON Parse error 的根因定位，以及用 MyRouter 通过非流式兼容策略跑稳。"
 ---
 

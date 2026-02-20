@@ -2,6 +2,7 @@
 title: "OpenAI 与 Claude 协议差异速览（Messages / Chat Completions / Responses）"
 date: 2026-02-16 15:00:00 +0800
 tags: [OpenAI, Claude, API, Protocol, Messages, Responses, Tools]
+categories: [basics]
 description: "用请求体对比 OpenAI 与 Claude 的协议结构、端点与工具字段映射。"
 ---
 

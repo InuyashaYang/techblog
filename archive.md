@@ -8,7 +8,7 @@ permalink: /archive/
   <h1>文章归档</h1>
 
   {%- for section in site.data.sections -%}
-    {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
+    {%- assign sec_posts = site.categories[section.slug] -%}
     {%- if sec_posts.size > 0 -%}
       <div class="archive-section">
         <div class="archive-section-head">
