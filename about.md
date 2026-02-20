@@ -6,6 +6,6 @@ permalink: /about/
 
 <section class="page">
   <h1>关于我</h1>
-  <p>代号：犬夜叉。这里记录工程实践、踩坑复盘、以及对技术的长期主义整理。</p>
-  <p>如果你想联系我，可以把邮箱/社交账号补充到这个页面。</p>
+  <p>这里记录关于 Agent 的工程实践、踩坑复盘。</p>
+  <p>联系方式：<a href="mailto:inuyasha2023ch@gmail.com">inuyasha2023ch@gmail.com</a></p>
 </section>
