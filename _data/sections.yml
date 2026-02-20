@@ -27,3 +27,9 @@
   group: Basics
   url: /basics/
   desc: "协议基础、API 入门与核心概念速览"
+
+- title: Skill
+  slug: skill
+  group: Skill
+  url: /skill/
+  desc: "可直接使用的提示词、模板与方法论"
