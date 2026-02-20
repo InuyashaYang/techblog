@@ -1,0 +1,18 @@
+<article class="post-card">
+  <div class="post-date">{{ include.post.date | date: "%Y-%m-%d" }}</div>
+  <h3 class="post-title"><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+  {%- if include.post.subtitle -%}
+    <p class="post-card-subtitle">{{ include.post.subtitle }}</p>
+  {%- endif -%}
+  <p class="post-excerpt">{{ include.post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+  <div class="post-meta">
+    {%- if include.post.tags and include.post.tags.size > 0 -%}
+      <div class="tags">
+        {%- for tag in include.post.tags limit: 3 -%}
+          <span class="tag">{{ tag }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    <a class="read" href="{{ include.post.url | relative_url }}">阅读</a>
+  </div>
+</article>

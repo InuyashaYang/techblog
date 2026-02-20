@@ -18,24 +18,7 @@ layout: default
   {%- if cat_posts.size > 0 -%}
     <div class="post-grid">
       {%- for post in cat_posts -%}
-        <article class="post-card">
-          <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
-          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          {%- if post.subtitle -%}
-            <p class="post-card-subtitle">{{ post.subtitle }}</p>
-          {%- endif -%}
-          <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
-          <div class="post-meta">
-            {%- if post.tags and post.tags.size > 0 -%}
-              <div class="tags">
-                {%- for tag in post.tags limit: 3 -%}
-                  <span class="tag">{{ tag }}</span>
-                {%- endfor -%}
-              </div>
-            {%- endif -%}
-            <a class="read" href="{{ post.url | relative_url }}">阅读</a>
-          </div>
-        </article>
+        {%- include post-card.html post=post -%}
       {%- endfor -%}
     </div>
   {%- else -%}
