@@ -1,5 +1,6 @@
 ---
-title: "Claude Code（VS Code）接入第三方 OpenAI 兼容 API：完整操作与踩坑记录（含报错与标准处理）"
+title: "Claude Code 接入第三方 API"
+subtitle: "VS Code + CCR 转发配置与完整报错处理"
 date: 2026-02-16 13:00:00 +0800
 tags: [Claude Code, VSCode, OpenAI, CCR, Troubleshooting]
 categories: [claudecode]

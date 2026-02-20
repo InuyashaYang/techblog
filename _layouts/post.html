@@ -12,6 +12,9 @@ layout: default
       {%- endif -%}
     </div>
     <h1 class="post-h1">{{ page.title }}</h1>
+    {%- if page.subtitle -%}
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+    {%- endif -%}
     {%- if page.description -%}
       <p class="post-desc">{{ page.description }}</p>
     {%- endif -%}
@@ -23,5 +26,43 @@ layout: default
 
   <footer class="post-footer">
     <a class="btn btn-ghost" href="{{ "/archive/" | relative_url }}">返回归档</a>
+    {%- if page.categories contains 'skill' -%}
+      <button class="btn btn-ghost" id="copy-md-btn" onclick="copyMarkdown()">复制 Markdown</button>
+    {%- endif -%}
   </footer>
 </article>
+
+{%- if page.categories contains 'skill' -%}
+<script src="https://cdn.jsdelivr.net/npm/turndown@7/dist/turndown.min.js"></script>
+<script>
+function copyMarkdown() {
+  var prose = document.querySelector('.prose');
+  var td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
+  var md = td.turndown(prose.innerHTML);
+  var btn = document.getElementById('copy-md-btn');
+  function reset() { btn.textContent = '复制 Markdown'; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(md).then(function() {
+      btn.textContent = '已复制 ✓';
+      setTimeout(reset, 2000);
+    }).catch(function() {
+      fallbackCopy(md, btn, reset);
+    });
+  } else {
+    fallbackCopy(md, btn, reset);
+  }
+}
+function fallbackCopy(text, btn, reset) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  btn.textContent = '已复制 ✓';
+  setTimeout(reset, 2000);
+}
+</script>
+{%- endif -%}

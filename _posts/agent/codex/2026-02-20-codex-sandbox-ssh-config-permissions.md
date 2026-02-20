@@ -1,5 +1,6 @@
 ---
-title: "Codex 沙盒设置对 VS Code Remote-SSH 连接的影响"
+title: "Codex 沙盒与 Remote-SSH 冲突"
+subtitle: "SSH config ACL 污染导致连接失败与修复"
 date: 2026-02-20 12:00:00 +0800
 tags: [Codex, SSH, VSCode, Windows, ACL]
 categories: [codex]

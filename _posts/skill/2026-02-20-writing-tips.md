@@ -1,5 +1,6 @@
 ---
-title: "博客写作技巧"
+title: "写作技巧"
+subtitle: "用最少文字把问题讲清楚"
 date: 2026-02-20 14:00:00 +0800
 tags: [写作, 技巧, 规范, 方法论]
 categories: [skill]

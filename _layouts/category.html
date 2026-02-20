@@ -21,6 +21,9 @@ layout: default
         <article class="post-card">
           <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
           <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {%- if post.subtitle -%}
+            <p class="post-card-subtitle">{{ post.subtitle }}</p>
+          {%- endif -%}
           <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
           <div class="post-meta">
             {%- if post.tags and post.tags.size > 0 -%}

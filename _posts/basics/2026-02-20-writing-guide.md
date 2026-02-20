@@ -1,5 +1,6 @@
 ---
-title: "技术博文写作规范"
+title: "写作规范"
+subtitle: "技术复盘的结构模板与质量标准"
 date: 2026-02-20 13:00:00 +0800
 tags: [写作, 规范, 方法论]
 categories: [basics]
