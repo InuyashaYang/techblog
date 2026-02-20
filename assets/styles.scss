@@ -336,3 +336,205 @@ a:hover { color: var(--brand2); }
   .hero-card { padding: 22px; border-radius: 20px; }
   .archive-item { grid-template-columns: 1fr; gap: 6px; }
 }
+
+/* ── Dropdown navigation ── */
+.nav-dropdown { position: relative; }
+
+.nav-link-has-children::after {
+  content: " ▾";
+  font-size: 9px;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 148px;
+  flex-direction: column;
+  background: rgba(246, 242, 234, 0.97);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(21, 21, 21, 0.13);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .dropdown-menu { display: flex; }
+
+.dropdown-item {
+  padding: 9px 16px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid var(--stroke);
+  transition: background 0.15s, color 0.15s;
+}
+.dropdown-item:last-child { border-bottom: 0; }
+.dropdown-item:hover { background: rgba(255, 255, 255, 0.8); color: var(--ink); }
+
+/* ── Topic section on homepage ── */
+.topic-group-wrap {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.topic-group-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.topic-group-label {
+  min-width: 56px;
+  padding-top: 18px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.topic-cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.topic-card {
+  min-width: 140px;
+  flex: 1;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  animation: rise 800ms ease-out both;
+}
+.topic-card:hover {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 28px rgba(21, 21, 21, 0.11);
+  color: inherit;
+  transform: translateY(-2px);
+}
+
+.topic-title {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+}
+
+.topic-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.topic-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand2);
+  margin-top: 8px;
+}
+
+/* ── Category page ── */
+.cat-header {
+  border-bottom: 1px solid var(--stroke);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+
+.cat-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.cat-desc {
+  color: var(--muted);
+  margin: 8px 0 0;
+  font-size: 15px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+  border: 2px dashed var(--stroke);
+  border-radius: 16px;
+  font-size: 15px;
+}
+
+.empty-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  opacity: 0.4;
+}
+
+/* ── Archive by section ── */
+.archive-section { margin-bottom: 30px; }
+
+.archive-section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.archive-section-group {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+
+.archive-section-title {
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+}
+
+.archive-section-count {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.page-desc {
+  color: var(--muted);
+  margin: 8px 0 0;
+  font-size: 15px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .topic-group-row { flex-direction: column; gap: 8px; }
+  .topic-group-label { padding-top: 0; min-width: unset; }
+}
+
+@media (max-width: 560px) {
+  .topic-card { min-width: calc(50% - 6px); }
+}

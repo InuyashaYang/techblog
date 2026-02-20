@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<section class="page">
+  <div class="cat-header">
+    {%- if page.section -%}
+      <div class="cat-eyebrow">{{ page.section }}</div>
+    {%- endif -%}
+    <h1>{{ page.title }}</h1>
+    {%- if page.description -%}
+      <p class="cat-desc">{{ page.description }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains page.category" -%}
+
+  {%- if cat_posts.size > 0 -%}
+    <div class="post-grid">
+      {%- for post in cat_posts -%}
+        <article class="post-card">
+          <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+          <div class="post-meta">
+            {%- if post.tags and post.tags.size > 0 -%}
+              <div class="tags">
+                {%- for tag in post.tags limit: 3 -%}
+                  <span class="tag">{{ tag }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+            <a class="read" href="{{ post.url | relative_url }}">阅读</a>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="empty-state">
+      <div class="empty-icon">◌</div>
+      <p>文章正在整理中，敬请期待。</p>
+    </div>
+  {%- endif -%}
+</section>

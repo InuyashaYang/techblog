@@ -16,12 +16,57 @@ layout: default
 
 <section class="section">
   <div class="section-head">
+    <h2>专题</h2>
+    <a class="section-more" href="{{ "/archive/" | relative_url }}">全部文章</a>
+  </div>
+
+  <div class="topic-group-wrap">
+    <div class="topic-group-row">
+      <span class="topic-group-label">Agent</span>
+      <div class="topic-cards">
+        {%- for section in site.data.sections -%}
+          {%- if section.group == "Agent" -%}
+            {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
+            <a class="topic-card" href="{{ section.url | relative_url }}">
+              <div class="topic-title">{{ section.title }}</div>
+              <p class="topic-desc">{{ section.desc }}</p>
+              <div class="topic-count">
+                {%- if sec_posts.size > 0 -%}{{ sec_posts.size }} 篇{%- else -%}即将上线{%- endif -%}
+              </div>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="topic-group-row">
+      <span class="topic-group-label">Basics</span>
+      <div class="topic-cards">
+        {%- for section in site.data.sections -%}
+          {%- if section.group == "Basics" -%}
+            {%- assign sec_posts = site.posts | where_exp: "post", "post.categories contains section.slug" -%}
+            <a class="topic-card" href="{{ section.url | relative_url }}">
+              <div class="topic-title">{{ section.title }}</div>
+              <p class="topic-desc">{{ section.desc }}</p>
+              <div class="topic-count">
+                {%- if sec_posts.size > 0 -%}{{ sec_posts.size }} 篇{%- else -%}即将上线{%- endif -%}
+              </div>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
     <h2>最新文章</h2>
     <a class="section-more" href="{{ "/archive/" | relative_url }}">全部文章</a>
   </div>
 
   <div class="post-grid">
-    {%- for post in site.posts limit: 6 -%}
+    {%- for post in site.posts limit: 4 -%}
       <article class="post-card">
         <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
         <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>

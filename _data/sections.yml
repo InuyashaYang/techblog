@@ -1,0 +1,29 @@
+- title: Claude Code
+  slug: claudecode
+  group: Agent
+  url: /agent/claudecode/
+  desc: "VS Code 集成、第三方 API 配置与踩坑记录"
+
+- title: Codex
+  slug: codex
+  group: Agent
+  url: /agent/codex/
+  desc: "OpenAI Codex 使用笔记与实践"
+
+- title: OpenCode
+  slug: opencode
+  group: Agent
+  url: /agent/opencode/
+  desc: "OpenCode 探索与上手指南"
+
+- title: OpenClaw
+  slug: openclaw
+  group: Agent
+  url: /agent/openclaw/
+  desc: "OpenClaw 使用记录与分析"
+
+- title: Basics
+  slug: basics
+  group: Basics
+  url: /basics/
+  desc: "协议基础、API 入门与核心概念速览"
